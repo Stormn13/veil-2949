@@ -1,0 +1,74 @@
+[gd_scene load_steps=13 format=3 uid="uid://d4ma2pdt4ax6x"]
+
+[ext_resource type="Texture2D" uid="uid://bte6ttfu2h1hj" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="1_d2goa"]
+[ext_resource type="PackedScene" uid="uid://cbrgmkaxgtjwc" path="res://scenes/player.tscn" id="1_oam07"]
+[ext_resource type="Shader" path="res://shaders/main.gdshader" id="3_0le16"]
+[ext_resource type="PackedScene" uid="uid://yvx4l80firfo" path="res://scenes/old tv.tscn" id="4_e6w6u"]
+[ext_resource type="PackedScene" uid="uid://bmk1tm62d4vbf" path="res://scenes/enemy.tscn" id="5_vmpnk"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_id4fj"]
+vertices = PackedVector3Array(-29.5, 0.5, -29.5, -29.5, 0.5, 29.5, 29.5, 0.5, 29.5, 29.5, 0.5, -29.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uudrl"]
+albedo_texture = ExtResource("1_d2goa")
+uv1_scale = Vector3(50.085, 50.085, 50.085)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2d8k0"]
+material = SubResource("StandardMaterial3D_uudrl")
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q0fqx"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ewqhm"]
+shader = ExtResource("3_0le16")
+shader_parameter/sky_top_color = Color(0.02, 0, 0.05, 1)
+shader_parameter/sky_horizon_color = Color(0.1, 0.1, 0.3, 1)
+shader_parameter/horizon_blur = 0.05
+shader_parameter/moon_color = Color(0.9, 0.9, 0.8, 1)
+shader_parameter/moon_size = 0.05
+shader_parameter/moon_crescent_offset = -0.02
+shader_parameter/star_density = 50.0
+shader_parameter/star_brightness = 5.0
+
+[sub_resource type="Sky" id="Sky_s4vir"]
+sky_material = SubResource("ShaderMaterial_ewqhm")
+
+[sub_resource type="Environment" id="Environment_qmu87"]
+background_mode = 2
+sky = SubResource("Sky_s4vir")
+ambient_light_source = 3
+
+[node name="Main" type="Node"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+navigation_mesh = SubResource("NavigationMesh_id4fj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_2d8k0")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_q0fqx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.965926, 0.258819, 0, -0.183013, 0.683013, 0.707107, 0.183013, -0.683013, 0.707107, 0, 9, 10)
+shadow_enabled = true
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_oam07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54795, 2.0716, 2.91078)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qmu87")
+
+[node name="old tv" parent="." instance=ExtResource("4_e6w6u")]
+transform = Transform3D(0.276, 0, 0, 0, 0.276, 0, 0, 0, 0.575, 1.21672, 0.330817, 2.438)
+
+[node name="SK_LowPolyCat" parent="." instance=ExtResource("5_vmpnk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7)

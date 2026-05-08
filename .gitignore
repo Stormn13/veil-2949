@@ -1,0 +1,32 @@
+# Godot-specific ignores
+.import/
+.export/
+export.cfg
+export_presets.cfg
+
+# Mono/C# builds
+.mono/
+data_*/
+mono_crash.*
+
+# Imported files
+*.import
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Build outputs
+bin/
+obj/
+
+# Logs
+*.log

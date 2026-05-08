@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://csparwy1b6qa8"]
+
+[node name="Floor" type="StaticBody3D"]

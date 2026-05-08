@@ -1,0 +1,15 @@
+ColorRect
+CanvasLayer
+Node3D
+CollisionShape3D
+StaticBody3D
+MeshInstance3D
+OmniLight3D
+DirectionalLight3D
+WorldEnvironment
+NavigationAgent3D
+NavigationRegion3D
+CharacterBody3D
+Sprite3D
+Camera3D
+Node
