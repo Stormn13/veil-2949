@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
+	#intract check
 	if Input.is_action_just_pressed("intract"):
 		pickup(space_state, mousepos)
 func _input(event: InputEvent) -> void:
@@ -55,4 +56,3 @@ func pickup(space_state, mousepos):
 		pass
 	elif results.collider == tv.get_child(0):
 		tv.hide()
-		

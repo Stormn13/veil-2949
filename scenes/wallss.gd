@@ -30,4 +30,4 @@ func _create_collision_for_mesh(parent_node: Node3D) -> void:
 	else:
 		collision_shape.shape = mesh_data.create_convex_shape()
 		
-	print("Added collision to: ", parent_node.name)
+	

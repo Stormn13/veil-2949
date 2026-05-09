@@ -490,4 +490,4 @@ transform = Transform3D(-1.46433e-08, 0, 0.335, 0, 0.335, 0, -0.335, 0, -1.46433
 transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, -0.130079, 0.532155, -3.13506)
 
 [node name="enemy" parent="." instance=ExtResource("22_30hlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49953, 0.164459, -1.55218)
+transform = Transform3D(0.386344, 0, 0.503948, 0, 0.635, 0, -0.503948, 0, 0.386344, -1.08012, 0.164459, -1.87801)

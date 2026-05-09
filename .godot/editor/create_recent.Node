@@ -1,3 +1,4 @@
+RayCast3D
 ColorRect
 CanvasLayer
 Node3D
@@ -12,4 +13,3 @@ NavigationRegion3D
 CharacterBody3D
 Sprite3D
 Camera3D
-Node
