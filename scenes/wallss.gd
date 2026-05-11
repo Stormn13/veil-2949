@@ -1,10 +1,12 @@
 extends Node3D
 
 @export_enum("Trimesh", "Convex") var collision_type: String = "Trimesh"
+@onready var navregion = $".."
 
 func _ready() -> void:
 	_process_node(self)
-
+	navregion.bake_navigation_mesh()
+	
 func _process_node(node: Node) -> void:
 	# 1. Check if this node has a 'mesh' property (common in imported MeshInstances)
 	if "mesh" in node and node.mesh != null:
@@ -13,6 +15,7 @@ func _process_node(node: Node) -> void:
 	# 2. Recursively check all children
 	for child in node.get_children():
 		_process_node(child)
+	
 
 func _create_collision_for_mesh(parent_node: Node3D) -> void:
 	# Create the StaticBody (The physics object)

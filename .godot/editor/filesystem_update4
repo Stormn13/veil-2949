@@ -1,10 +1,8 @@
-res://scenes/enemy.tscn
+res://scenes/map1.tscn
 res://shaders/main.gdshader
 res://shaders/enemy.gdshader
-res://scripts/enemy.gd
-res://scripts/player.gd
-res://scenes/map1.tscn
+res://scenes/wallss.gd
 res://scenes/main.tscn
 res://scenes/player.tscn
 res://scenes/old tv.tscn
-res://scenes/wallss.gd
+res://scenes/enemy.tscn

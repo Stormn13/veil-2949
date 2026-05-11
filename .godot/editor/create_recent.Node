@@ -1,3 +1,4 @@
+NavigationRegion3D
 RayCast3D
 ColorRect
 CanvasLayer
@@ -9,7 +10,5 @@ OmniLight3D
 DirectionalLight3D
 WorldEnvironment
 NavigationAgent3D
-NavigationRegion3D
 CharacterBody3D
 Sprite3D
-Camera3D
