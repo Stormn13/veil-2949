@@ -7,6 +7,8 @@ enum State { ROAMING, AGRO, SEMIAGRO }
 const RAY_LENGTH = 100
 @onready var raycast = $RayCast3D
 
+var roaming_active:bool
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_path"):
 		var random_position := Vector3.ZERO
@@ -30,12 +32,13 @@ func _physics_process(delta: float) -> void:
 	#logic to choose the correct state
 	match current_state:
 		State.ROAMING:
-			roaming()
+			if !roaming_active:
+				roaming()
 		State.AGRO:
 			agro()
 		State.SEMIAGRO:
 			semiagro()
-	
+	# program to move the cat where is is supposed to
 	var destination = navigation_agent_3d.get_next_path_position()
 	var local_destination = destination - global_position
 	var direction = local_destination.normalized()
@@ -46,8 +49,17 @@ func _physics_process(delta: float) -> void:
 
 #functions of states(roaming, agro, semiagro)
 func roaming():
-	print("roaming")
-	
+	roaming_active = true
+	var random_time = randi_range(1,2)
+	await get_tree().create_timer(random_time).timeout
+	var random_pos := Vector3.ZERO
+	random_pos.x = randf_range(-2.4, 1.4)
+	random_pos.y = global_position.y
+	random_pos.z = randf_range(-5.5, -0.1)
+	navigation_agent_3d.set_target_position(random_pos)
+	while !navigation_agent_3d.is_navigation_finished():
+		await get_tree().physics_frame
+	roaming_active = false
 func agro():
 	print("agro")
 		
