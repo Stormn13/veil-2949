@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+#variable for the cone of vision direction
+var dir = 1
+@export var speed = 50
 @onready var player = $"../CharacterBody3D"
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var current_state = State.ROAMING
@@ -9,7 +12,10 @@ const RAY_LENGTH = 100
 @onready var raycast = $RayCast3D
 
 var roaming_active:bool
+var agro_active:bool
 
+func _ready() -> void:
+	raycast.add_exception(self)
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_path"):
 		var random_position := Vector3.ZERO
@@ -18,9 +24,19 @@ func _unhandled_input(event: InputEvent) -> void:
 		navigation_agent_3d.set_target_position(random_position)
 
 
+func _process(delta: float) -> void:
+	raycast.rotate_y(dir * delta * speed)
+	if raycast.rotation.y > deg_to_rad(45):
+		dir = -1
+	elif raycast.rotation.y < deg_to_rad(-45):
+		dir = 1
+	if agro_active:
+		look_at(player.global_position)
+		rotate_y(deg_to_rad(-90))
 func _physics_process(delta: float) -> void:
 	#logic to see the player
 	var target = raycast.get_collider()
+	
 	if (target == $"../CharacterBody3D") and (current_state == State.ROAMING):
 		current_state = State.AGRO
 	if (target != $"../CharacterBody3D") and (current_state == State.AGRO):
@@ -44,7 +60,7 @@ func _physics_process(delta: float) -> void:
 	var local_destination = destination - global_position
 	var direction = local_destination.normalized()
 	
-	velocity = direction * 5.0
+	velocity = direction * 1.0
 	move_and_slide()
 
 
@@ -65,8 +81,9 @@ func roaming():
 		await get_tree().physics_frame
 	roaming_active = false
 func agro():
-	print("agro")
+	roaming_active = false
+	agro_active = true
 	navigation_agent_3d.set_target_position(player.global_position)
-		
+	
 func semiagro():
 	print("semiagro")
