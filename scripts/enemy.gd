@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var player = $"../CharacterBody3D"
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var current_state = State.ROAMING
 enum State { ROAMING, AGRO, SEMIAGRO }
@@ -50,18 +51,22 @@ func _physics_process(delta: float) -> void:
 #functions of states(roaming, agro, semiagro)
 func roaming():
 	roaming_active = true
+	#step one wait for a random time
 	var random_time = randi_range(1,2)
 	await get_tree().create_timer(random_time).timeout
+	#step two get random positon for the enemy to travel to
 	var random_pos := Vector3.ZERO
 	random_pos.x = randf_range(-2.4, 1.4)
 	random_pos.y = global_position.y
 	random_pos.z = randf_range(-5.5, -0.1)
 	navigation_agent_3d.set_target_position(random_pos)
+	#check if the roaming is done only then go start it again
 	while !navigation_agent_3d.is_navigation_finished():
 		await get_tree().physics_frame
 	roaming_active = false
 func agro():
 	print("agro")
+	navigation_agent_3d.set_target_position(player.global_position)
 		
 func semiagro():
 	print("semiagro")

@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1778481976
+::res://::1778575298
 icon.svg::CompressedTexture2D::2405852993947926764::1760283409::1760283414::1::::<><>::
 ::res://addons/::1767274085
 ::res://addons/kenney_prototype_textures/::1767274086
@@ -1852,16 +1852,16 @@ Window_Round3.obj::Mesh::7940682938673521109::1767796065::1767796173::1::::<><>:
 Window_Small1.obj::Mesh::2315755054383745744::1767796065::1767796173::1::::<><>::
 Window_Small2.obj::Mesh::4168353947760974912::1767796065::1767796173::1::::<><>::
 Window_Small3.obj::Mesh::3224177178110987950::1767796065::1767796173::1::::<><>::
-::res://scenes/::1778359975
-enemy.tscn::PackedScene::3250943836187276723::1778359926::0::1::::<><>::res://shaders/enemy.gdshader<>res://scripts/enemy.gd
-main.tscn::PackedScene::9219560059453111681::1778359925::0::1::::<><>::uid://bte6ttfu2h1hj::::res://addons/kenney_prototype_textures/dark/texture_01.png<>uid://cbrgmkaxgtjwc::::res://scenes/player.tscn<>res://shaders/main.gdshader<>uid://yvx4l80firfo::::res://scenes/old tv.tscn<>uid://bmk1tm62d4vbf::::res://scenes/enemy.tscn
-map1.tscn::PackedScene::2991950806723415726::1778359975::0::1::::<><>::res://shaders/main.gdshader<>uid://cbrgmkaxgtjwc::::res://scenes/player.tscn<>uid://b4hv3tmxliawm::::res://resources/kenney_furniture-kit/Models/GLTF format/floorFull.glb<>res://scenes/wallss.gd<>uid://dwwe05l0hg63i::::res://resources/kenney_furniture-kit/Models/GLTF format/wall.glb<>uid://ds2lp6jj2yy08::::res://resources/kenney_furniture-kit/Models/GLTF format/wallDoorway.glb<>uid://d2vw4edmh2cfv::::res://resources/kenney_furniture-kit/Models/GLTF format/wallCorner.glb<>uid://b8thpnvyqas7n::::res://resources/kenney_furniture-kit/Models/GLTF format/wallWindow.glb<>uid://dj52n673ajk76::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Door_1.fbx<>uid://cxqfi42ksfv68::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Shelf_Small3.fbx<>uid://duby0dheanxwc::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Light_Stand1.fbx<>uid://dttfd1k2s27si::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Couch_Large2.fbx<>uid://blotclbkc41ee::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Carpet_1.fbx<>uid://cado5nh6dxwue::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Table_RoundLarge.fbx<>uid://f8216qbdh8tk::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Chair_1.fbx<>uid://yvx4l80firfo::::res://scenes/old tv.tscn<>uid://bjbkcjwv14noi::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Bed_Single.fbx<>uid://cem1flavis7pu::::res://resources/Ultimate House Interior Pack - June 2020/FBX/NightStand_3.fbx<>uid://dd6ge771qmovk::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Trashcan_Cylindric.fbx<>uid://bne3llehagmlv::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Shelf_Small1.fbx<>uid://8qbatrpk0u5d::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Light_Floor3.fbx<>uid://bmk1tm62d4vbf::::res://scenes/enemy.tscn
-old tv.tscn::PackedScene::1729333088883202028::1778359926::0::1::::<><>::uid://dvmdcawt2j2bt::::res://resources/old tv Game asset - simple/tv texture copy.png<>res://shaders/enemy.gdshader
-player.tscn::PackedScene::4878510890614000362::1778359926::0::1::::<><>::res://scripts/player.gd
-wallss.gd::GDScript::-1::1778359063::0::1::::<>Node3D<>::
-::res://scripts/::1778359924
-enemy.gd::GDScript::-1::1778359924::0::1::::<>CharacterBody3D<>::
+::res://scenes/::1778492531
+enemy.tscn::PackedScene::3250943836187276723::1778492531::0::1::::<><>::res://shaders/enemy.gdshader<>res://scripts/enemy.gd
+main.tscn::PackedScene::9219560059453111681::1778492530::0::1::::<><>::uid://bte6ttfu2h1hj::::res://addons/kenney_prototype_textures/dark/texture_01.png<>uid://cbrgmkaxgtjwc::::res://scenes/player.tscn<>res://shaders/main.gdshader<>uid://yvx4l80firfo::::res://scenes/old tv.tscn<>uid://bmk1tm62d4vbf::::res://scenes/enemy.tscn
+map1.tscn::PackedScene::2991950806723415726::1778492531::0::1::::<><>::res://shaders/main.gdshader<>uid://cbrgmkaxgtjwc::::res://scenes/player.tscn<>uid://b4hv3tmxliawm::::res://resources/kenney_furniture-kit/Models/GLTF format/floorFull.glb<>res://scenes/wallss.gd<>uid://dwwe05l0hg63i::::res://resources/kenney_furniture-kit/Models/GLTF format/wall.glb<>uid://ds2lp6jj2yy08::::res://resources/kenney_furniture-kit/Models/GLTF format/wallDoorway.glb<>uid://d2vw4edmh2cfv::::res://resources/kenney_furniture-kit/Models/GLTF format/wallCorner.glb<>uid://b8thpnvyqas7n::::res://resources/kenney_furniture-kit/Models/GLTF format/wallWindow.glb<>uid://dj52n673ajk76::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Door_1.fbx<>uid://cxqfi42ksfv68::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Shelf_Small3.fbx<>uid://duby0dheanxwc::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Light_Stand1.fbx<>uid://dttfd1k2s27si::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Couch_Large2.fbx<>uid://blotclbkc41ee::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Carpet_1.fbx<>uid://cado5nh6dxwue::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Table_RoundLarge.fbx<>uid://f8216qbdh8tk::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Chair_1.fbx<>uid://yvx4l80firfo::::res://scenes/old tv.tscn<>uid://bjbkcjwv14noi::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Bed_Single.fbx<>uid://cem1flavis7pu::::res://resources/Ultimate House Interior Pack - June 2020/FBX/NightStand_3.fbx<>uid://dd6ge771qmovk::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Trashcan_Cylindric.fbx<>uid://bne3llehagmlv::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Shelf_Small1.fbx<>uid://8qbatrpk0u5d::::res://resources/Ultimate House Interior Pack - June 2020/FBX/Light_Floor3.fbx<>uid://bmk1tm62d4vbf::::res://scenes/enemy.tscn
+old tv.tscn::PackedScene::1729333088883202028::1778492530::0::1::::<><>::uid://dvmdcawt2j2bt::::res://resources/old tv Game asset - simple/tv texture copy.png<>res://shaders/enemy.gdshader
+player.tscn::PackedScene::4878510890614000362::1778492530::0::1::::<><>::res://scripts/player.gd
+wallss.gd::GDScript::-1::1778489696::0::1::::<>Node3D<>::
+::res://scripts/::1778492530
+enemy.gd::GDScript::-1::1778492530::0::1::::<>CharacterBody3D<>::
 player.gd::GDScript::-1::1778357795::0::1::::<>CharacterBody3D<>::
-::res://shaders/::1778360170
-enemy.gdshader::Shader::-1::1778360170::0::1::::<><>::
-main.gdshader::Shader::-1::1778360170::0::1::::<><>::
+::res://shaders/::1778492851
+enemy.gdshader::Shader::-1::1778492851::0::1::::<><>::
+main.gdshader::Shader::-1::1778492851::0::1::::<><>::
