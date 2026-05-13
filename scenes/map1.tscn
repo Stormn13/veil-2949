@@ -10,11 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://b8thpnvyqas7n" path="res://resources/kenney_furniture-kit/Models/GLTF format/wallWindow.glb" id="7_x2twi"]
 [ext_resource type="PackedScene" uid="uid://dj52n673ajk76" path="res://resources/Ultimate House Interior Pack - June 2020/FBX/Door_1.fbx" id="9_q0i2v"]
 [ext_resource type="PackedScene" uid="uid://cxqfi42ksfv68" path="res://resources/Ultimate House Interior Pack - June 2020/FBX/Shelf_Small3.fbx" id="10_hcpmk"]
-[ext_resource type="PackedScene" uid="uid://duby0dheanxwc" path="res://resources/Ultimate House Interior Pack - June 2020/FBX/Light_Stand1.fbx" id="11_kkohr"]
 [ext_resource type="PackedScene" uid="uid://dttfd1k2s27si" path="res://resources/Ultimate House Interior Pack - June 2020/FBX/Couch_Large2.fbx" id="12_jmw7y"]
 [ext_resource type="PackedScene" uid="uid://blotclbkc41ee" path="res://resources/Ultimate House Interior Pack - June 2020/FBX/Carpet_1.fbx" id="13_n5ylr"]
 [ext_resource type="PackedScene" uid="uid://cado5nh6dxwue" path="res://resources/Ultimate House Interior Pack - June 2020/FBX/Table_RoundLarge.fbx" id="14_82ljb"]
 [ext_resource type="PackedScene" uid="uid://f8216qbdh8tk" path="res://resources/Ultimate House Interior Pack - June 2020/FBX/Chair_1.fbx" id="15_d1mlg"]
+[ext_resource type="PackedScene" uid="uid://do7005bd01qb3" path="res://scenes/light_stand_1.tscn" id="15_erinn"]
 [ext_resource type="PackedScene" uid="uid://yvx4l80firfo" path="res://scenes/old tv.tscn" id="16_q14fb"]
 [ext_resource type="PackedScene" uid="uid://bjbkcjwv14noi" path="res://resources/Ultimate House Interior Pack - June 2020/FBX/Bed_Single.fbx" id="17_7cadt"]
 [ext_resource type="PackedScene" uid="uid://cem1flavis7pu" path="res://resources/Ultimate House Interior Pack - June 2020/FBX/NightStand_3.fbx" id="17_tayfg"]
@@ -50,6 +50,8 @@ sky_material = SubResource("ShaderMaterial_avpcp")
 [sub_resource type="Environment" id="Environment_go1w8"]
 background_mode = 2
 sky = SubResource("Sky_qlk4c")
+tonemap_mode = 2
+tonemap_white = 11.82
 
 [node name="Node3D" type="Node3D"]
 
@@ -172,9 +174,6 @@ transform = Transform3D(0.25, 0, 0, 0, 0.225, 0, 0, 0, 0.225, -1.28505, 0.054199
 [node name="Shelf_Small3" parent="NavigationRegion3D/props" instance=ExtResource("10_hcpmk")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.20264, 0.0541992, -4.18282)
 
-[node name="Light_Stand1" parent="NavigationRegion3D/props" instance=ExtResource("11_kkohr")]
-transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 1.28783, 0.0541992, -5.42869)
-
 [node name="Couch_Large2" parent="NavigationRegion3D/props" instance=ExtResource("12_jmw7y")]
 transform = Transform3D(0.325, 0, 0, 0, 0.325, 0, 0, 0, 0.325, 0.023198, 0.0541992, -5.26519)
 
@@ -198,6 +197,9 @@ transform = Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, -0.0812088, 0.054
 
 [node name="Trashcan_Cylindric" parent="NavigationRegion3D/props" instance=ExtResource("18_l415d")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.162602, 0.0541992, -0.848541)
+
+[node name="Light_Stand1" parent="NavigationRegion3D/props" instance=ExtResource("15_erinn")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 1.25399, 0.0541992, -5.337)
 
 [node name="Shelf_Small1" parent="NavigationRegion3D/props" instance=ExtResource("19_vgj7f")]
 transform = Transform3D(0.545, 0, 0, 0, 0.545, 0, 0, 0, 0.545, 0.994115, 0.0541992, -0.760294)
@@ -481,14 +483,19 @@ environment = SubResource("Environment_go1w8")
 
 [node name="lights" type="Node3D" parent="."]
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.324882, 1, -2)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="lights"]
 transform = Transform3D(0.258819, -0.965926, -6.11506e-09, -0.683013, -0.183013, 0.707107, -0.683013, -0.183013, -0.707107, 0, 2, 3)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3372, 2.85348, -3.18918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15743, 0.967514, -5.21372)
+shadow_enabled = true
+omni_range = 4.71052
+omni_attenuation = 0.821
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.131467, 0.886185, -3.10276)
+omni_range = 3.07852
+omni_attenuation = 0.821
 
 [node name="old tv" parent="." instance=ExtResource("16_q14fb")]
 transform = Transform3D(-8.96083e-09, 0, -0.205, 0, 0.205, 0, 0.205, 0, -8.96083e-09, 1.26731, 0.638159, -4.15928)

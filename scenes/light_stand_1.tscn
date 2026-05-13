@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://do7005bd01qb3"]
+
+[ext_resource type="PackedScene" uid="uid://duby0dheanxwc" path="res://resources/Ultimate House Interior Pack - June 2020/FBX/Light_Stand1.fbx" id="1_2buey"]
+
+[node name="Light_Stand1" instance=ExtResource("1_2buey")]
+
+[node name="Light_Stand1" parent="." index="0"]
+cast_shadow = 0
