@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://do7005bd01qb3"]
+[gd_scene load_steps=3 format=3 uid="uid://do7005bd01qb3"]
 
 [ext_resource type="PackedScene" uid="uid://duby0dheanxwc" path="res://resources/Ultimate House Interior Pack - June 2020/FBX/Light_Stand1.fbx" id="1_2buey"]
+[ext_resource type="Material" uid="uid://cvev2sb20vfnq" path="res://materials/lampshade.tres" id="2_2rnux"]
 
 [node name="Light_Stand1" instance=ExtResource("1_2buey")]
 
 [node name="Light_Stand1" parent="." index="0"]
 cast_shadow = 0
+surface_material_override/1 = ExtResource("2_2rnux")

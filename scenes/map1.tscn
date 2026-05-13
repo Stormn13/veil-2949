@@ -50,8 +50,12 @@ sky_material = SubResource("ShaderMaterial_avpcp")
 [sub_resource type="Environment" id="Environment_go1w8"]
 background_mode = 2
 sky = SubResource("Sky_qlk4c")
+ambient_light_source = 3
+ambient_light_energy = 16.0
 tonemap_mode = 2
 tonemap_white = 11.82
+glow_enabled = true
+glow_strength = 0.3
 
 [node name="Node3D" type="Node3D"]
 
@@ -487,7 +491,8 @@ environment = SubResource("Environment_go1w8")
 transform = Transform3D(0.258819, -0.965926, -6.11506e-09, -0.683013, -0.183013, 0.707107, -0.683013, -0.183013, -0.707107, 0, 2, 3)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15743, 0.967514, -5.21372)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19401, 1.04974, -5.26547)
+light_color = Color(0.866076, 0.811759, 0.711547, 1)
 shadow_enabled = true
 omni_range = 4.71052
 omni_attenuation = 0.821
